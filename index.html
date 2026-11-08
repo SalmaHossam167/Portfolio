@@ -160,7 +160,7 @@ dialog button{position:absolute;top:10px;right:10px;border:0;border-radius:999px
 
   <section id="projects" class="rv">
     <h2 class="title">Projects</h2>
-    <p class="sub">From raw data to models, dashboards and a working AI assistant. Pick a topic to filter.</p>
+    <p class="sub">From raw data to pipelines, models, dashboards and a working AI assistant. Pick a topic to filter.</p>
     <div class="filters" role="group" aria-label="Filter projects">
       <button type="button" data-f="all" aria-pressed="true">All</button>
       <button type="button" data-f="ai" aria-pressed="false">AI</button>
@@ -168,6 +168,26 @@ dialog button{position:absolute;top:10px;right:10px;border:0;border-radius:999px
       <button type="button" data-f="bi" aria-pressed="false">BI &amp; ETL</button>
     </div>
     <div class="projects">
+      <article class="proj" data-t="bi data" style="--c:var(--teal)">
+        <span class="tag">BI &amp; ETL</span>
+        <h3>Temperature Data Pipeline</h3>
+        <p>An orchestrated pipeline that pulls hourly temperature data for five cities from a public API, validates it and stores it as Parquet partitioned by city and date.</p>
+        <p class="biz"><b>Business value:</b> bad readings are caught before they reach storage, and analysts can read one city or one day without loading everything.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Parquet</span><span class="chip">Prefect</span><span class="chip">S3-compatible storage</span><span class="chip">REST API</span></div>
+        <ul>
+          <li>Checks for missing values, out-of-range readings, duplicates and gaps in hourly coverage. The run fails on bad data.</li>
+          <li>Prefect tasks retry failed API calls automatically.</li>
+          <li>Tested on a local S3-compatible emulator (moto), not yet on AWS S3.</li>
+        </ul>
+        <p><a href="https://github.com/SalmaHossam167/temperature-data-pipeline">View the code on GitHub</a></p>
+      </article>
+      <article class="proj" data-t="bi" style="--c:var(--pink)">
+        <span class="tag">BI &amp; ETL</span>
+        <h3>Real Estate Market Analysis</h3>
+        <p>A star schema and an SSIS ETL pipeline that loads a SQL data warehouse for reporting.</p>
+        <p class="biz"><b>Business value:</b> scattered property data becomes one consistent source, so teams get fast and reliable market reports.</p>
+        <div class="chips"><span class="chip">SSIS</span><span class="chip">SQL Server</span><span class="chip">Star Schema</span></div>
+      </article>
       <article class="proj wide" data-t="ai data" style="--c:var(--violet)">
         <span class="tag">AI</span>
         <h3>Olist AI Agent</h3>
@@ -202,13 +222,6 @@ dialog button{position:absolute;top:10px;right:10px;border:0;border-radius:999px
         <p class="biz"><b>Business value:</b> sales and management teams see their key numbers in one place instead of building reports by hand.</p>
         <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span></div>
       </article>
-      <article class="proj" data-t="bi" style="--c:var(--pink)">
-        <span class="tag">BI &amp; ETL</span>
-        <h3>Real Estate Market Analysis</h3>
-        <p>A star schema and an SSIS ETL pipeline that loads a SQL data warehouse for reporting.</p>
-        <p class="biz"><b>Business value:</b> scattered property data becomes one consistent source, so teams get fast and reliable market reports.</p>
-        <div class="chips"><span class="chip">SSIS</span><span class="chip">SQL Server</span><span class="chip">Star Schema</span></div>
-      </article>
     </div>
   </section>
 
@@ -216,8 +229,8 @@ dialog button{position:absolute;top:10px;right:10px;border:0;border-radius:999px
     <h2 class="title">Skills</h2>
     <p class="sub">The tools I reach for most.</p>
     <div class="skills">
-      <div class="skill" style="--c:var(--violet)"><h3>Databases &amp; ETL</h3><div class="chips"><span class="chip">SQL Server</span><span class="chip">MySQL</span><span class="chip">SSIS</span><span class="chip">Data Warehousing</span></div></div>
-      <div class="skill" style="--c:var(--teal)"><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Streamlit</span><span class="chip">Git</span></div></div>
+      <div class="skill" style="--c:var(--violet)"><h3>Databases &amp; ETL</h3><div class="chips"><span class="chip">SQL Server</span><span class="chip">MySQL</span><span class="chip">SSIS</span><span class="chip">Data Warehousing</span><span class="chip">Parquet</span><span class="chip">SQLite</span></div></div>
+      <div class="skill" style="--c:var(--teal)"><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Prefect</span><span class="chip">REST APIs</span><span class="chip">Streamlit</span><span class="chip">Git</span></div></div>
       <div class="skill" style="--c:var(--orange)"><h3>Data &amp; BI</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Excel</span><span class="chip">Matplotlib</span><span class="chip">Plotly</span></div></div>
       <div class="skill" style="--c:var(--pink)"><h3>Machine learning &amp; AI</h3><div class="chips"><span class="chip">scikit-learn</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">LLM APIs</span></div></div>
     </div>
@@ -226,9 +239,9 @@ dialog button{position:absolute;top:10px;right:10px;border:0;border-radius:999px
   <section id="experience" class="rv">
     <h2 class="title">Experience &amp; education</h2>
     <p class="sub">&nbsp;</p>
-    <div class="job" style="--c:var(--violet)"><b>Independent Developer</b><small>Freelance</small>Built custom software and management systems for clients.</div>
+    <div class="job" style="--c:var(--orange)"><b>Data Analyst Intern (Training Program)</b><small>MAS for Programming (ERP Solutions) · Mar – May 2026</small>Certified as a Data Analyst on May 15, 2026. Wrote and optimized SQL on ERP business data, managed ERP database operations and kept data accurate and consistent for reporting. Built a multi-tenant hotel management dashboard serving several hotels, each routed to its own data, with multi-select filtering in the Store Transaction report.</div>
     <div class="job" style="--c:var(--teal)"><b>Data Science Instructor (part-time)</b><small>iSchool, DECI Program · Jun – Aug 2026</small>Taught Python, data analysis and machine learning.</div>
-    <div class="job" style="--c:var(--orange)"><b>Data Analyst Intern (Training Program)</b><small>MAS for Programming (ERP Solutions) · Mar – May 2026</small>Certified as a Data Analyst on May 15, 2026. Wrote and optimized SQL on ERP business data, managed ERP database operations and kept data accurate and consistent for reporting.</div>
+    <div class="job" style="--c:var(--violet)"><b>Independent Developer</b><small>Freelance</small>Built an Arabic ERP system on SQLite for a plastic company. It tracks inventory, records invoices, calculates all accounts automatically and tracks customers’ outstanding balances.</div>
     <div class="job" style="--c:var(--pink)"><b>B.Sc. Computer Science, Information Systems</b><small>Future University in Egypt · 2021 – 2025</small>Dual degree program with the University of Cincinnati.</div>
   </section>
 
